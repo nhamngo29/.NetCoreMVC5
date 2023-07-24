@@ -1,0 +1,41 @@
+﻿@model List<Test.Controllers.Aricle>;
+@{
+    ViewData["Title"] = "site news index";
+    //Viewbag
+    //var aricles = ViewBag.Aricle;
+    //ViewData
+    //var aricles = ViewData["Aricles"] as List<Test.Controllers.Aricle>;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+</head>
+<body>
+    <h1>News listing</h1>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Author</th>
+        </tr>
+        @foreach (var article in Model)
+        {
+            <tr>
+                <td>@article.Id</td>
+                <td>@article.Title</td>
+                <td>@article.Content</td>
+                <td>@article.Author</td>
+
+            </tr>
+        }
+
+
+    </table>
+</body>
+</html>
